@@ -18,7 +18,9 @@ export function GreetForm() {
 
     try {
       const query = name ? `?name=${encodeURIComponent(name)}` : "";
-      const response = await fetch(`${process.env.NEXT_PUBLIC_BACKEND_URL}/greet${query}`);
+      const response = await fetch(
+        `${process.env.NEXT_PUBLIC_BACKEND_URL}/greet${query}`,
+      );
 
       if (!response.ok) {
         throw new Error("Request failed");
